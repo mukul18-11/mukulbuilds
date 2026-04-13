@@ -4,23 +4,23 @@
 
 import { motion } from "framer-motion";
 import { fadeUp } from "@/lib/animations";
-import { SkillBadge } from "./SkillBadge";
+import { SkillCard } from "@/components/ui/SkillCard";
 import type { SkillCategoryData } from "@/lib/types";
 
 export function SkillCategory({ title, yearRange, skills }: SkillCategoryData) {
   return (
     <motion.div variants={fadeUp}>
-      <div className="flex items-baseline gap-3 mb-3">
-        <h3 className="font-serif text-lg font-semibold tracking-tight">
-          {title}
-        </h3>
-        <span className="font-mono text-xs text-muted-foreground tracking-wider">
-          {yearRange}
-        </span>
-      </div>
-      <div className="flex flex-wrap gap-2">
+      <h3 className="font-sans text-xl md:text-2xl font-semibold tracking-tight mb-4">
+        {title}
+      </h3>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {skills.map((skill) => (
-          <SkillBadge key={skill.name} name={skill.name} />
+          <SkillCard
+            key={skill.name}
+            name={skill.name}
+            icon={skill.icon}
+            yearRange={yearRange}
+          />
         ))}
       </div>
     </motion.div>

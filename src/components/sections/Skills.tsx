@@ -28,7 +28,7 @@ export function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-14">
           {skillCategories.map((category) => (
             <SkillCategory key={category.id} {...category} />
           ))}
