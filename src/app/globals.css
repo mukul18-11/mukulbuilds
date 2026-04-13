@@ -1,0 +1,95 @@
+/* globals.css — CSS variables, base styles, dot pattern, noise overlay, smooth scroll */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 220 16% 12%;
+    --muted: 40 12% 92%;
+    --muted-foreground: 220 8% 42%;
+    --accent: 166 72% 35%;
+    --accent-foreground: 0 0% 100%;
+    --border: 40 10% 84%;
+    --ring: 166 72% 35%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 16% 12%;
+  }
+
+  .dark {
+    --background: 220 16% 7%;
+    --foreground: 60 6% 93%;
+    --muted: 220 10% 16%;
+    --muted-foreground: 220 8% 56%;
+    --accent: 166 72% 45%;
+    --accent-foreground: 220 16% 7%;
+    --border: 220 10% 20%;
+    --ring: 166 72% 45%;
+    --card: 220 14% 10%;
+    --card-foreground: 60 6% 93%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: hsl(var(--foreground));
+    background: hsl(var(--background));
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Dot pattern background for sections */
+.dots-pattern {
+  background-image: radial-gradient(
+    circle,
+    hsl(var(--foreground) / 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+/* Noise overlay — fixed, full screen, very subtle */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("/noise.svg");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Gradient mesh background for atmospheric sections */
+.gradient-mesh {
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsl(166 72% 45% / 0.08) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 97% 21%,
+      hsl(220 72% 45% / 0.06) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 52% 99%,
+      hsl(166 72% 45% / 0.05) 0px,
+      transparent 50%
+    );
+}
