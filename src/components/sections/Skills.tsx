@@ -20,7 +20,7 @@ export function Skills() {
         className="relative mx-auto max-w-site px-6 py-24 md:py-32"
       >
         <motion.div variants={fadeUp} className="mb-12">
-          <h2 className="font-serif text-3xl md:text-5xl font-semibold tracking-tight mb-4">
+          <h2 className="font-sans text-3xl md:text-5xl font-semibold tracking-tight mb-4">
             Skills
           </h2>
           <p className="text-muted-foreground text-base md:text-lg max-w-xl">

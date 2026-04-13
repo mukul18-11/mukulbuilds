@@ -29,7 +29,7 @@ export function ExperienceItem({
       </span>
 
       {/* Title & company */}
-      <h3 className="font-serif text-xl font-semibold tracking-tight mb-1">
+      <h3 className="font-sans text-xl font-semibold tracking-tight mb-1">
         {title}
       </h3>
       <p className="text-sm text-muted-foreground mb-3">{company}</p>

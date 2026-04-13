@@ -32,7 +32,7 @@ export function ProjectCard({
       {/* Content */}
       <div className="p-6">
         <div className="flex items-start justify-between mb-2">
-          <h3 className="font-serif text-xl md:text-2xl font-semibold tracking-tight">
+          <h3 className="font-sans text-xl md:text-2xl font-semibold tracking-tight">
             {title}
           </h3>
           <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors flex-shrink-0 mt-1" />

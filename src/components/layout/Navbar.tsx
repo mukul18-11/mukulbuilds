@@ -28,7 +28,7 @@ export function Navbar() {
           {/* Logo */}
           <a
             href="#home"
-            className="font-serif text-xl font-bold tracking-tight hover:text-accent transition-colors"
+            className="font-sans text-xl font-semibold tracking-tight hover:text-accent transition-colors"
           >
             MK
           </a>
@@ -81,7 +81,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-serif text-2xl font-medium tracking-tight text-foreground hover:text-accent transition-colors"
+                  className="font-sans text-2xl font-medium tracking-tight text-foreground hover:text-accent transition-colors"
                 >
                   {link.label}
                 </a>

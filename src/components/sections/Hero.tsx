@@ -14,7 +14,7 @@ import { DotPattern } from "@/components/ui/DotPattern";
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
-      <DotPattern className="opacity-30" />
+      <DotPattern className="opacity-20" />
       <GradientMesh />
 
       <motion.div
@@ -33,7 +33,7 @@ export function Hero() {
           {/* Name */}
           <motion.h1
             variants={fadeUp}
-            className="font-serif text-4xl md:text-7xl font-bold tracking-tighter mb-4"
+            className="font-sans text-4xl md:text-7xl font-semibold tracking-tight mb-4"
           >
             {heroData.name}
           </motion.h1>
