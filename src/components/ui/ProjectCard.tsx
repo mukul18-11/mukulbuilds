@@ -21,7 +21,7 @@ export function ProjectCard({
     >
       {/* Gradient cover placeholder */}
       <div className="relative h-48 md:h-56 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-muted to-card transition-transform duration-500 group-hover:scale-105" />
+        <div className="absolute inset-0 bg-background transition-transform duration-500 group-hover:scale-105" />
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="font-serif text-6xl md:text-7xl font-bold text-foreground/5 group-hover:text-foreground/10 transition-colors duration-300">
             {count}
