@@ -3,6 +3,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
@@ -28,9 +29,15 @@ export function Navbar() {
           {/* Logo */}
           <a
             href="#home"
-            className="font-sans text-xl font-semibold tracking-tight hover:text-accent transition-colors"
+            className="hover:opacity-80 transition-opacity"
           >
-            MK
+            <Image
+              src="/images/logo.jpg"
+              alt="Logo"
+              width={80}
+              height={80}
+              className="h-20 w-auto"
+            />
           </a>
 
           {/* Desktop nav links */}

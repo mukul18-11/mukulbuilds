@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.emanueledipietro.com)",
+      "Bash(npm --version)",
+      "Bash(pnpm --version)",
+      "Bash(bun --version)",
+      "WebFetch(domain:fonts.google.com)",
+      "Bash(npm view:*)",
+      "Bash(npx create-next-app@14:*)",
+      "Bash(cp -r /Users/mukulkumar/Desktop/Projects/mukulbuilds-temp/* /Users/mukulkumar/Desktop/Projects/mukulbuilds/)",
+      "Bash(cp -r /Users/mukulkumar/Desktop/Projects/mukulbuilds-temp/.eslintrc.json /Users/mukulkumar/Desktop/Projects/mukulbuilds/)",
+      "Bash(cp -r /Users/mukulkumar/Desktop/Projects/mukulbuilds-temp/.gitignore /Users/mukulkumar/Desktop/Projects/mukulbuilds/)",
+      "Bash(rm -rf /Users/mukulkumar/Desktop/Projects/mukulbuilds-temp)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(node:*)"
+    ]
+  }
+}

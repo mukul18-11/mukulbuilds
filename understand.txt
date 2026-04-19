@@ -1,0 +1,289 @@
+================================================================================
+MUKULBUILDS PROJECT STRUCTURE - COMPLETE GUIDE
+================================================================================
+
+PROJECT TYPE: Next.js 14 Portfolio Website
+PURPOSE: Personal portfolio for Mukul Kumar (Backend Developer & AI Builder)
+DEPLOYMENT: Vercel (combineapps.com)
+
+================================================================================
+📁 MAIN FOLDERS & WHAT THEY CONTAIN
+================================================================================
+
+/src/
+└─ Main source code folder - ALL your application code lives here
+
+    /src/app/
+    ├─ page.tsx          → MAIN HOMEPAGE - Imports all sections and displays them
+    ├─ layout.tsx        → ROOT LAYOUT - Sets up fonts, themes, metadata, favicon
+    └─ globals.css       → GLOBAL STYLES - CSS variables, dark/light theme colors, 
+                           dot patterns, noise overlay
+
+    /src/components/
+    └─ All React components broken into subfolders
+
+        /src/components/layout/
+        ├─ Navbar.tsx        → Top navigation bar with logo, links, theme toggle
+        ├─ Footer.tsx        → Bottom footer section with links
+        ├─ ScrollIndicator.tsx → Shows scroll progress bar at top
+        └─ Section.tsx       → Wrapper component for each section
+
+        /src/components/sections/
+        ├─ Hero.tsx          → Main hero/landing section with profile photos
+        ├─ Projects.tsx      → Projects showcase section
+        ├─ Experience.tsx    → Work experience timeline section
+        ├─ Skills.tsx        → Skills grid section
+        └─ Contact.tsx       → Contact form section
+
+        /src/components/ui/
+        ├─ ProfilePhotos.tsx  → Your 2 overlapping profile photos (Hero section)
+        ├─ ProjectCard.tsx    → Individual project card component
+        ├─ SkillCard.tsx      → Individual skill card
+        ├─ SkillBadge.tsx     → Skill badge/pill component
+        ├─ ExperienceItem.tsx → Single experience entry
+        ├─ StatCounter.tsx    → Animated counter (5+, 10+, etc)
+        ├─ InterestTag.tsx    → Interest tags (Backend Dev, AI Agents, etc)
+        ├─ RotatingTags.tsx   → Rotating animation tags
+        ├─ ThemeToggle.tsx    → Dark/Light theme toggle button
+        ├─ BrandIcon.tsx      → Brand/company icon
+        ├─ GradientMesh.tsx   → Gradient background mesh
+        ├─ NoiseOverlay.tsx   → Noise texture overlay
+        ├─ DotPattern.tsx     → Dot pattern background
+        └─ SkillCategory.tsx  → Container for skill badges
+
+        /src/components/providers/
+        └─ ThemeProvider.tsx  → Wraps entire app with dark/light theme support
+
+    /src/hooks/
+    ├─ useScrollProgress.ts  → Hook to detect scroll position
+    ├─ useInView.ts         → Hook to detect if element is in viewport
+    └─ useCounter.ts        → Hook for animated counter numbers
+
+    /src/lib/
+    ├─ data.ts             → ⭐ ALL SITE CONTENT (projects, experience, skills, bio)
+                             EDIT THIS FILE TO UPDATE YOUR PORTFOLIO CONTENT
+    ├─ types.ts            → TypeScript interfaces/types for all data
+    ├─ animations.ts       → Framer Motion animation definitions
+    ├─ fonts.ts            → Google Fonts imports (Playfair, Sora, JetBrains Mono)
+    └─ utils.ts            → Helper functions (cn() for Tailwind classes)
+
+/public/
+└─ Static files served directly to browser
+
+    /public/images/
+    ├─ profile-1.jpg       → Your 1st profile photo (Hero section)
+    ├─ profile-2.jpg       → Your 2nd profile photo (Hero section)
+    ├─ web-projects-cover.jpg    → Cover image for Web Projects
+    ├─ ai-projects-cover.jpg     → Cover image for AI Projects
+    ├─ logo.jpg            → Your logo (appears in navbar top-left)
+    └─ combineapps-logo.svg → Company logo (Experience section)
+
+    favicon.ico            → Browser tab icon (appears in browser tab)
+    og-image.png           → Social media preview image (for sharing links)
+    noise.svg              → Noise texture SVG file
+
+/api/
+└─ Currently EMPTY - Future location for backend API endpoints
+
+/database/
+└─ Currently EMPTY - Future location for database schemas
+
+/services/
+└─ Currently EMPTY - Future location for service integrations
+
+================================================================================
+⚙️ CONFIG FILES (Project Setup & Build)
+================================================================================
+
+package.json             → NPM dependencies, project metadata, scripts
+package-lock.json       → Locks exact dependency versions
+tsconfig.json           → TypeScript configuration
+tailwind.config.ts      → Tailwind CSS customization
+postcss.config.mjs      → PostCSS plugins (for Tailwind)
+next.config.mjs         → Next.js framework configuration
+next-env.d.ts           → Next.js type definitions
+
+CLAUDE.md               → Project memory/documentation (what this project is)
+README.md               → Default Next.js readme
+understand.txt         → This file you're reading now!
+
+================================================================================
+🎯 HOW TO UPDATE CONTENT (WHAT GOES WHERE)
+================================================================================
+
+EVERYTHING you change is in /src/lib/data.ts
+
+TO ADD/EDIT:
+├─ Profile bio, name, title, stats
+│  └─ Edit: heroData object in data.ts
+│
+├─ Projects
+│  └─ Edit: projectCategories array in data.ts
+│
+├─ Work experience
+│  └─ Edit: experiences array in data.ts
+│
+├─ Skills & skill categories
+│  └─ Edit: skillCategories array in data.ts
+│
+└─ Contact info
+   └─ Edit: contactData object in data.ts
+
+IMAGES GO IN: /public/images/
+Then reference them in data.ts
+
+================================================================================
+🖼️ IMAGE PLACEMENT QUICK GUIDE
+================================================================================
+
+Your Profile Photos (Hero section)
+├─ File 1: /public/images/profile-1.jpg
+├─ File 2: /public/images/profile-2.jpg
+└─ Reference in data.ts → heroData.profileImages
+
+Logo (Top-left navbar)
+├─ File: /public/images/logo.jpg
+└─ Used in: src/components/layout/Navbar.tsx
+
+Favicon (Browser tab)
+├─ File: /public/favicon.ico
+└─ Used in: src/app/layout.tsx (metadata)
+
+Project Cover Images
+├─ File 1: /public/images/web-projects-cover.jpg
+├─ File 2: /public/images/ai-projects-cover.jpg
+└─ Reference in data.ts → projectCategories array
+
+Company Logo
+├─ File: /public/images/combineapps-logo.svg
+└─ Reference in data.ts → experiences array
+
+================================================================================
+🚀 HOW TO RUN & DEPLOY
+================================================================================
+
+DEVELOPMENT:
+$ npm run dev
+→ Starts dev server at http://localhost:3000
+→ Auto-refreshes when you save files
+
+PRODUCTION BUILD:
+$ npm run build
+$ npm run start
+
+LINT CODE:
+$ npm run lint
+
+DEPLOYMENT:
+Push to main branch → Auto-deploys to Vercel
+
+================================================================================
+🎨 DESIGN FILES & CUSTOMIZATION
+================================================================================
+
+FONTS:
+├─ Playfair Display (serif) → Headings
+├─ Sora (sans) → Body text
+└─ JetBrains Mono (mono) → Dates/code
+
+Defined in: /src/lib/fonts.ts
+
+COLORS & THEME:
+├─ CSS Variables in: /src/app/globals.css
+├─ Dark mode default, light mode toggle
+├─ Colors:
+│  ├─ Background: #0f1117 (dark), #f9f7f4 (light)
+│  ├─ Accent: #20c5a0 (teal-green)
+│  └─ Text: #edece8 (warm off-white), #1a1a1a (dark)
+
+ANIMATIONS:
+├─ Framer Motion variants in: /src/lib/animations.ts
+├─ Page load staggered reveals
+├─ Scroll-triggered section entrances
+└─ Hover micro-interactions
+
+BACKGROUND EFFECTS:
+├─ Gradient mesh overlays
+├─ Noise texture (noise-overlay in globals.css)
+├─ Dot patterns (DotPattern.tsx)
+└─ Layered transparencies
+
+================================================================================
+📊 COMPONENT HIERARCHY (How they connect)
+================================================================================
+
+/src/app/page.tsx (MAIN PAGE)
+│
+├─ imports sections in order:
+│
+├─ → HeroSection (shows profile photos, name, title, stats)
+│   └─ uses ProfilePhotos.tsx, StatCounter.tsx, InterestTag.tsx
+│
+├─ → ProjectsSection (shows project cards)
+│   └─ uses ProjectCard.tsx for each project
+│
+├─ → ExperienceSection (shows experience timeline)
+│   └─ uses ExperienceItem.tsx for each job
+│
+├─ → SkillsSection (shows skills grid)
+│   └─ uses SkillCategory.tsx → SkillCard.tsx
+│
+└─ → ContactSection (shows contact form)
+    └─ uses ContactForm component
+
+All sections wrapped with:
+├─ Navbar.tsx (top fixed navigation)
+├─ ScrollIndicator.tsx (progress bar)
+├─ Footer.tsx (bottom footer)
+└─ NoiseOverlay.tsx (background texture)
+
+Theme managed by:
+└─ ThemeProvider.tsx (wraps everything)
+
+================================================================================
+✅ CHECKLIST: WHAT YOU NEED TO DO
+================================================================================
+
+[ ] 1. Add profile photos to /public/images/profile-1.jpg and profile-2.jpg
+[ ] 2. Add logo to /public/images/logo.jpg
+[ ] 3. Add favicon to /public/favicon.ico
+[ ] 4. Update heroData in data.ts with your name, bio, stats
+[ ] 5. Update projectCategories in data.ts with your projects
+[ ] 6. Update experiences in data.ts with your work history
+[ ] 7. Update skillCategories in data.ts with your skills
+[ ] 8. Update contactData in data.ts with your email
+[ ] 9. Run: npm run dev
+[ ] 10. View at http://localhost:3000
+[ ] 11. Deploy to Vercel when ready
+
+================================================================================
+🆘 COMMON QUESTIONS
+================================================================================
+
+Q: Where do I change my name?
+A: /src/lib/data.ts → heroData.name
+
+Q: How do I add a new project?
+A: /src/lib/data.ts → projectCategories array → add new object
+
+Q: Where do I put my images?
+A: /public/images/ folder
+
+Q: How do I change colors/theme?
+A: /src/app/globals.css → CSS variables (--background, --foreground, etc)
+
+Q: Where are animations defined?
+A: /src/lib/animations.ts → Framer Motion variants
+
+Q: How do I add a new section?
+A: Create /src/components/sections/NewSection.tsx → add data to data.ts → import in page.tsx
+
+Q: Why isn't my image showing?
+A: Make sure file path in data.ts exactly matches /public/images/filename.ext
+
+Q: How do I deploy?
+A: Push to main branch → Vercel auto-deploys
+
+================================================================================
+END OF GUIDE
+================================================================================
